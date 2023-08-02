@@ -8,9 +8,9 @@ fuart库用于接入单片机的UART通信。
 
 使用时，需要按照平台封装好UART相关的函数，并且传入初始化结构体。
 
-## 2. 授权
+# 2. 测试平台
 
-本软件遵循MIT开源协议。
+MCU：R5F10BGGC
 
 ## 3. 使用说明
 
@@ -53,14 +53,13 @@ static void r_uart0_callback_receiveend(uint8_t err_type)
 {
     /* Start user code. Do not edit comment generated here */
     uart0_rx_flag = 1;
-    uart0_tx_flag = 1;
     /* End user code. Do not edit comment generated here */
 }
 ```
 
 ### 3.1 初始化
 
-首先需要初始化FUART设备。这需要提供一个`fuart_InitTypeDef`类型的结构体，其中包含了设备的发送函数和接收函数。然后，调用`fuart_Init`函数进行初始化，并获取到一个设备句柄。
+首先需要初始化fuart设备。这需要提供一个`fuart_InitTypeDef`类型的结构体，其中包含了设备的发送函数和接收函数。然后，调用`fuart_Init`函数进行初始化，并获取到一个设备句柄。
 
 ```c
 fuart_InitTypeDef fuart_InitStruct;
@@ -92,7 +91,7 @@ fuart_scanf(fuart, "%d", &buf); // 从串口接收一个整数
 
 ### 3.4 释放设备
 
-最后，当我们不再需要使用FUART设备时，可以调用`fuart_DeInit`函数来释放设备句柄。
+最后，当我们不再需要使用fuart设备时，可以调用`fuart_DeInit`函数来释放设备句柄。
 
 ```c
 fuart_DeInit(fuart);
