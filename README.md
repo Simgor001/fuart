@@ -49,7 +49,7 @@ static void r_uart0_callback_sendend(void)
     /* End user code. Do not edit comment generated here */
 }
 
-static void r_uart0_callback_error(uint8_t err_type)
+static void r_uart0_callback_receiveend(uint8_t err_type)
 {
     /* Start user code. Do not edit comment generated here */
     uart0_rx_flag = 1;
