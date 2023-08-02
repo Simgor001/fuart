@@ -52,7 +52,8 @@ static void r_uart0_callback_sendend(void)
 static void r_uart0_callback_error(uint8_t err_type)
 {
     /* Start user code. Do not edit comment generated here */
-    uart0_end_flag = 1;
+    uart0_rx_flag = 1;
+    uart0_tx_flag = 1;
     /* End user code. Do not edit comment generated here */
 }
 ```
